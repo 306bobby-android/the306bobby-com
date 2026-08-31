@@ -32,6 +32,18 @@ Beyond that: keeping the vendor blobs coherent across firmware revisions, chasin
 regressions that only appear on one of the three, and cutting a signed release every
 month.
 
+## Where the source lives
+
+The device trees and the shared kernel are kept in
+[306bobby-android-org](https://github.com/306bobby-android-org) —
+[`crdroid_android_kernel_google_redbull`](https://github.com/306bobby-android-org/crdroid_android_kernel_google_redbull)
+covers all four devices — with the official trees for `barbet` and `bramble` maintained
+directly in [crDroid's own organisation](https://github.com/crdroidandroid).
+
+The family isn't crDroid-only: I upstream device and OTA entries for these Pixels into
+[Project Infinity X](https://github.com/ProjectInfinity-X/official_devices) and
+[Matrixx](https://github.com/Matrixx-Devices) as well.
+
 ## Downloads
 
 Builds go out through crDroid's official channels — the OTA app on-device, or the XDA

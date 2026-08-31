@@ -8,7 +8,7 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const featured = projects.filter((p) => p.data.featured);
-const shown = (featured.length > 0 ? featured : projects).slice(0, 4);
+const shown = (featured.length > 0 ? featured : projects).slice(0, 6);
 const hasMore = projects.length > shown.length;
 
 const devices = [
@@ -29,9 +29,11 @@ const devices = [
       turns all of it into a signed monthly OTA.
     </p>
     <p>
-      Everything I publish is on <a href={SITE.github} rel="me noopener">GitHub</a>. Builds
-      ship through crDroid's official channels; I also publish
-      <a href={SITE.gapps} rel="noopener">matching NikGapps packages</a>.
+      Most of that work lands upstream rather than in my own repositories —
+      <a href="/projects/upstream-contributions/">43 pull requests</a> into crDroid's
+      organisation, and platform patches that other ROMs have since picked up. Builds ship
+      through crDroid's official channels, with
+      <a href={SITE.gapps} rel="noopener">matching NikGapps packages</a> alongside them.
     </p>
   </section>
 
