@@ -8,6 +8,7 @@ export const GET: APIRoute = async ({ site }) => {
   const urls = [
     { loc: new URL('/', base).href },
     { loc: new URL('/projects/', base).href },
+    { loc: new URL('/cherrygram-next/', base).href },
     ...projects.map((p) => ({
       loc: new URL(`/projects/${p.id}/`, base).href,
       lastmod: p.data.date.toISOString().slice(0, 10),

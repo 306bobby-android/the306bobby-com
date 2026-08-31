@@ -1,0 +1,137 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const REPO = 'https://git.306bobbyandroid.download/306bobby/Cherrygram-Next';
+const RELEASES = `${REPO}/releases`;
+
+const removed = [
+  'talsec freerasp, the anti-tamper sdk cherrygram bundled',
+  'huawei/hms support',
+  "the donation system, including the previous maintainer's payment details",
+  "hardcoded privileges for the previous maintainer's accounts: a restart those accounts could trigger by sending a link, delete protection on two chats, and a bypass for the lockscreen prompt",
+  'a remotely fetched sticker blocklist, which let a third party change what users saw',
+];
+
+const details = [
+  { label: 'based on', value: 'telegram 12.10.1' },
+  { label: 'application id', code: 'com.the306bobby.cherrygramnext' },
+  { label: 'installs', value: 'alongside cherrygram, not over it' },
+  { label: 'licence', value: 'gplv2' },
+];
+---
+
+<Base
+  title="Cherrygram Next"
+  description="A fork of Cherrygram, itself a fork of Telegram for Android. Continues from the last snapshot Cherrygram published. No releases yet."
+>
+  <section class="intro">
+    <p class="eyebrow">telegram client for android</p>
+    <h1>cherrygram next</h1>
+    <p class="lede">
+      a fork of cherrygram, which is itself a fork of telegram for android. it continues
+      from the last snapshot cherrygram published before its source stopped being updated.
+    </p>
+    <p>
+      the work so far has been catching up and taking things out. it is built on telegram
+      12.10.1, and it installs as <code>com.the306bobby.cherrygramnext</code>, so it sits
+      next to cherrygram rather than replacing it.
+    </p>
+  </section>
+
+  <section class="callout">
+    <p class="eyebrow">status</p>
+    <h2>no releases yet</h2>
+    <p>
+      there is nothing to download today. the first build will be a release candidate, not a
+      stable one. when it exists it will be on the repository's
+      <a href={RELEASES} rel="noopener">releases page</a>.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>what came out</h2>
+    <p class="blurb">these came out of the fork:</p>
+    <ul class="list">
+      {removed.map((item) => <li>{item}</li>)}
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>firebase</h2>
+    <p class="blurb">
+      firebase is used for push notifications only. analytics is off by default, the
+      crashlytics plugin is not applied, and remote config is never initialised. the
+      <a href="/cherrygram-next/privacy/">privacy policy</a> covers where your data actually
+      goes, and it is kept in the project's own repository.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>the details</h2>
+    <div class="table-scroll">
+      <table>
+        <tbody>
+          {details.map((row) => (
+            <tr>
+              <th scope="row">{row.label}</th>
+              <td>{row.code ? <code>{row.code}</code> : row.value}</td>
+            </tr>
+          ))}
+          <tr>
+            <th scope="row">source</th>
+            <td><a href={REPO} rel="noopener">git.306bobbyandroid.download</a></td>
+          </tr>
+          <tr>
+            <th scope="row">privacy</th>
+            <td><a href="/cherrygram-next/privacy/">/cherrygram-next/privacy</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .intro { margin-bottom: 44px; }
+  .lede {
+    font-size: 1.05rem;
+    color: var(--fg-muted);
+    max-width: var(--measure);
+  }
+  .intro p:last-child { max-width: var(--measure); margin-bottom: 0; }
+
+  /* Same shell as ProjectCard, so the one thing a visitor most needs to know reads
+     as a panel rather than as another section of body copy. */
+  .callout {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-elev);
+    padding: 18px 20px;
+    margin-bottom: 52px;
+  }
+  .callout h2 { font-size: 1.05rem; margin-bottom: 8px; }
+  .callout p:last-child { margin-bottom: 0; max-width: var(--measure); }
+
+  .block { margin-bottom: 52px; }
+  .block:last-child { margin-bottom: 0; }
+  .block h2 { margin-bottom: 12px; }
+
+  .blurb { color: var(--fg-muted); max-width: var(--measure); margin-bottom: 0; }
+
+  .list {
+    max-width: var(--measure);
+    margin: 14px 0 0;
+    padding-left: 1.2em;
+    color: var(--fg-muted);
+  }
+  .list li { margin-bottom: 0.4em; }
+  .list li:last-child { margin-bottom: 0; }
+
+  th[scope='row'] {
+    font-weight: 400;
+    color: var(--fg-faint);
+    white-space: nowrap;
+    width: 1%;
+    padding-right: 20px;
+  }
+</style>
