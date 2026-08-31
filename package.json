@@ -1,0 +1,19 @@
+{
+  "name": "the306bobby-com",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "wrangler dev",
+    "deploy": "astro build && wrangler deploy",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "astro": "^7.2.9",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.127.1"
+  }
+}

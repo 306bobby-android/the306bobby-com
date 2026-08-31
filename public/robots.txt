@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://the306bobby.com/sitemap.xml

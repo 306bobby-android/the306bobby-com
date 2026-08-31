@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { SITE } from '../consts';
+
+const projects = (await getCollection('projects', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const featured = projects.filter((p) => p.data.featured);
+const shown = (featured.length > 0 ? featured : projects).slice(0, 4);
+const hasMore = projects.length > shown.length;
+---
+
+<Base description={SITE.description}>
+  <section class="intro">
+    <p class="eyebrow">Android platform &amp; systems</p>
+    <h1>Hey, I'm Bobby.</h1>
+    <p class="lede">
+      I work on Android platform code — device trees, SELinux policy, kernel bits, and the
+      tooling around them. This site collects the projects worth writing down.
+    </p>
+    <p>
+      Most of it lives on <a href={SITE.github} rel="me noopener">GitHub</a>.
+    </p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>{featured.length > 0 ? 'Featured projects' : 'Recent projects'}</h2>
+      {hasMore && <a class="more" href="/projects/">All projects &rarr;</a>}
+    </div>
+
+    {shown.length === 0 ? (
+      <p class="meta">No projects published yet.</p>
+    ) : (
+      <div class="grid">
+        {shown.map((project) => <ProjectCard project={project} />)}
+      </div>
+    )}
+  </section>
+</Base>
+
+<style>
+  .intro { margin-bottom: 56px; }
+  .lede {
+    font-size: 1.05rem;
+    color: var(--fg-muted);
+    max-width: var(--measure);
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .section-head h2 { margin: 0; }
+  .more { font-size: 0.88rem; text-decoration: none; }
+  .more:hover { text-decoration: underline; }
+
+  .grid { display: grid; gap: 14px; }
+</style>

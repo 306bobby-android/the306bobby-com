@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const projects = (await getCollection('projects', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Base title="Projects" description="Things I've built and maintain.">
+  <p class="eyebrow">{projects.length} {projects.length === 1 ? 'project' : 'projects'}</p>
+  <h1>Projects</h1>
+  <p class="lede">Things I've built, ported, or keep alive.</p>
+
+  {projects.length === 0 ? (
+    <p class="meta">Nothing published yet.</p>
+  ) : (
+    <div class="grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  )}
+</Base>
+
+<style>
+  .lede { color: var(--fg-muted); max-width: var(--measure); margin-bottom: 36px; }
+  .grid { display: grid; gap: 14px; }
+</style>
