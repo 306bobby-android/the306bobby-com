@@ -1,0 +1,20 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const entry = await getEntry('cherrygramNextPrivacy', 'cherrygram-next');
+if (!entry) throw new Error('The Cherrygram Next privacy policy entry is missing.');
+const { Content } = await render(entry);
+---
+
+<Base
+  title="Cherrygram Next — Privacy Policy"
+  description="What Cherrygram Next collects, which is nothing, and where your data actually goes."
+>
+  <p class="eyebrow">Cherrygram Next</p>
+  <Content />
+  <p>
+    <a href={entry.data.source}>Source of this page</a> — it is generated from
+    <code>PRIVACY.md</code> in the Cherrygram Next repository.
+  </p>
+</Base>

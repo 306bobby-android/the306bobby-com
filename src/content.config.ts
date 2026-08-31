@@ -21,4 +21,35 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { projects };
+// The Cherrygram Next privacy policy is maintained in that project's repository so
+// there is one copy to edit. Fetched at build time; a failure fails the build
+// rather than silently serving a stale policy.
+const PRIVACY_URL =
+  'https://git.306bobbyandroid.download/306bobby/Cherrygram-Next/raw/branch/main/PRIVACY.md';
+
+const cherrygramNextPrivacy = defineCollection({
+  loader: {
+    name: 'cherrygram-next-privacy',
+    async load({ store, renderMarkdown, logger }) {
+      logger.info(`Fetching ${PRIVACY_URL}`);
+      const res = await fetch(PRIVACY_URL);
+      if (!res.ok) {
+        throw new Error(`Could not fetch the Cherrygram Next privacy policy: HTTP ${res.status}`);
+      }
+      const body = await res.text();
+      if (!body.trim()) {
+        throw new Error('The Cherrygram Next privacy policy came back empty.');
+      }
+      store.clear();
+      store.set({
+        id: 'cherrygram-next',
+        data: { source: PRIVACY_URL },
+        body,
+        rendered: await renderMarkdown(body),
+      });
+    },
+  },
+  schema: z.object({ source: z.string().url() }),
+});
+
+export const collections = { projects, cherrygramNextPrivacy };
