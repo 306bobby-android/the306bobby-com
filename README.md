@@ -44,6 +44,7 @@ tags: ["kernel", "aosp"]     # optional
 repo: https://github.com/... # optional — renders a "Source" link
 link: https://example.com    # optional — renders a "Live" link
 status: active               # active | maintained | archived  (default: active)
+category: android            # android | tooling | side — groups the projects index
 featured: false              # true pins it to the home page
 draft: false                 # true keeps it out of the build entirely
 ---

@@ -4,6 +4,7 @@ summary: 43 pull requests into crDroid's own repositories, plus platform patches
 date: 2026-07-10
 tags: ["crdroid", "aosp", "upstream", "frameworks", "kernel"]
 link: https://github.com/crdroidandroid
+category: android
 status: active
 featured: true
 ---

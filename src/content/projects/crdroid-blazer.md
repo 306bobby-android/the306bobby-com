@@ -4,6 +4,7 @@ summary: Bringing up crDroid on Google's Tensor G5 hardware — official builds 
 date: 2026-06-07
 tags: ["crdroid", "aosp", "pixel", "tensor", "bringup"]
 link: https://xdaforums.com/t/rom-official-16-0-crdroid-12-x-for-pixel-10-pro-pro-xl-blazer-mustang.4785628/
+category: android
 status: active
 featured: true
 ---

@@ -4,6 +4,7 @@ summary: Telegram-connected bot that watches upstream repositories and cherry-pi
 date: 2026-06-22
 tags: ["python", "telegram", "git", "automation"]
 repo: https://github.com/306bobby-android/gh-merger-bot
+category: tooling
 status: active
 ---
 

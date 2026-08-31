@@ -5,6 +5,7 @@ date: 2026-08-31
 tags: ["nikgapps", "gapps", "packaging", "crdroid"]
 repo: https://github.com/nikgapps/config
 link: https://nikgapps.com/306bobby-android
+category: android
 status: active
 ---
 

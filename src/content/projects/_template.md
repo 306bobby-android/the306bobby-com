@@ -4,6 +4,7 @@ summary: One sentence on what this is and why it exists.
 date: 2026-01-01
 tags: ["tag-one", "tag-two"]
 repo: https://github.com/306bobby-android/example
+category: android              # android | tooling | side
 status: active
 draft: true
 ---

@@ -4,6 +4,7 @@ summary: Build script for producing signed crDroid OTA packages. Adopted upstrea
 date: 2026-02-04
 tags: ["shell", "crdroid", "build", "signing", "ota"]
 repo: https://github.com/crdroidandroid/crDroid-build-signed-script
+category: android
 status: archived
 featured: true
 ---

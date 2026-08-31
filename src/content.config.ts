@@ -13,6 +13,8 @@ const projects = defineCollection({
     repo: z.string().url().optional(),
     link: z.string().url().optional(),
     status: z.enum(['active', 'maintained', 'archived']).default('active'),
+    // Groups the projects index; order of sections is fixed in the page.
+    category: z.enum(['android', 'tooling', 'side']).default('android'),
     // Pins an entry to the top of the home page.
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),

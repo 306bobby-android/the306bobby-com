@@ -4,6 +4,7 @@ summary: Halium device port for redfin — the plumbing that lets a GNU/Linux di
 date: 2026-03-25
 tags: ["halium", "linux", "pixel", "redfin", "experiment"]
 repo: https://github.com/306bobby-android/halium_device_google_redfin
+category: android
 status: maintained
 ---
 

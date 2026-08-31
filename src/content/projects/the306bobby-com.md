@@ -5,6 +5,7 @@ date: 2026-08-31
 tags: ["astro", "cloudflare", "workers", "meta"]
 repo: https://github.com/306bobby-android/the306bobby-com
 link: https://the306bobby.com
+category: side
 status: active
 featured: false
 ---

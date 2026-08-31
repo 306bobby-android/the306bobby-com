@@ -4,6 +4,7 @@ summary: Lend a USB-attached Android device to a remote machine, so stock adb an
 date: 2026-08-25
 tags: ["go", "adb", "fastboot", "usb", "tooling"]
 repo: https://github.com/306bobby-android/radb
+category: tooling
 status: active
 featured: true
 ---

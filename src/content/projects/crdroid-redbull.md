@@ -4,6 +4,7 @@ summary: Official crDroid maintainer for the Pixel 4a 5G, Pixel 5, and Pixel 5a 
 date: 2026-06-29
 tags: ["crdroid", "aosp", "pixel", "device-trees", "kernel"]
 link: https://xdaforums.com/t/rom-official-13-14-15-crdroid-for-pixel-5a-barbet.4646786/
+category: android
 status: active
 featured: true
 ---
