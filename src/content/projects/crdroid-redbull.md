@@ -38,7 +38,7 @@ month.
 The device trees and the shared kernel are kept in
 [306bobby-android-org](https://github.com/306bobby-android-org) —
 [`crdroid_android_kernel_google_redbull`](https://github.com/306bobby-android-org/crdroid_android_kernel_google_redbull)
-covers all four devices — with the official trees for `barbet` and `bramble` maintained
+covers all three — with the official trees for `barbet` and `bramble` maintained
 directly in [crDroid's own organisation](https://github.com/crdroidandroid).
 
 The family isn't crDroid-only: I upstream device and OTA entries for these Pixels into

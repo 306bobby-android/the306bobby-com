@@ -11,8 +11,12 @@ const featured = projects.filter((p) => p.data.featured);
 const shown = (featured.length > 0 ? featured : projects).slice(0, 6);
 const hasMore = projects.length > shown.length;
 
+const P10 = 'https://xdaforums.com/t/rom-official-16-0-crdroid-12-x-for-pixel-10-pro-pro-xl-blazer-mustang.4785628/';
 const devices = [
-  { name: 'Pixel 10 Pro', codename: 'blazer', forum: 'https://xdaforums.com/t/rom-official-16-0-crdroid-12-x-for-pixel-10-pro-pro-xl-blazer-mustang.4785628/' },
+  { name: 'Pixel 10 Pro Fold', codename: 'rango', forum: 'https://xdaforums.com/t/rom-official-16-0-crdroid-12-x-for-pixel-10-pro-fold-rango.4785632/' },
+  { name: 'Pixel 10 Pro XL', codename: 'mustang', forum: P10 },
+  { name: 'Pixel 10 Pro', codename: 'blazer', forum: P10 },
+  { name: 'Pixel 10', codename: 'frankel', forum: 'https://xdaforums.com/t/rom-official-16-0-crdroid-12-x-for-pixel-10-frankel.4785629' },
   { name: 'Pixel 5a', codename: 'barbet', forum: 'https://xdaforums.com/t/rom-official-13-14-15-crdroid-for-pixel-5a-barbet.4646786/' },
   { name: 'Pixel 5', codename: 'redfin', forum: 'https://xdaforums.com/t/rom-official-13-14-15-crdroid-for-pixel-5-redfin.4664665/' },
   { name: 'Pixel 4a 5G', codename: 'bramble', forum: 'https://xdaforums.com/t/rom-official-13-14-15-crdroid-for-pixel-4a5g-bramble.4664667/' },
@@ -24,7 +28,7 @@ const devices = [
     <p class="eyebrow">Android platform &amp; ROM maintenance</p>
     <h1>Bobby Panarisi</h1>
     <p class="lede">
-      I maintain <a href="https://crdroid.net" rel="noopener">crDroid</a> for four Google
+      I maintain <a href="https://crdroid.net" rel="noopener">crDroid</a> for seven Google
       Pixel devices — device trees, kernels, SELinux policy, and the build tooling that
       turns all of it into a signed monthly OTA.
     </p>
@@ -55,7 +59,7 @@ const devices = [
         </tbody>
       </table>
     </div>
-    <p class="meta note">All four on crDroid 12.x / Android 16, built monthly.</p>
+    <p class="meta note">All seven on crDroid 12.x / Android 16, built monthly.</p>
   </section>
 
   <section>

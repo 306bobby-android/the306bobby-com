@@ -11,8 +11,9 @@ featured: true
 
 Maintaining devices means a lot of the work doesn't live in my own repositories — it lands
 in the ROM's. Across the [crdroidandroid](https://github.com/crdroidandroid) organisation
-that's 43 pull requests, plus direct commit access to the official device trees for
-`barbet` and `bramble` and to the `redbull` kernel.
+that's 43 pull requests, plus direct commit access to the official device trees — `barbet`
+and `bramble` on the older Pixels, and `laguna` and `mustang` on the Pixel 10 platform —
+and to the `redbull` kernel.
 
 ## Platform changes
 
@@ -24,6 +25,10 @@ that's 43 pull requests, plus direct commit access to the official device trees 
 | `android_packages_inputmethods_LatinIME` | Brought the keyboard back up to current; emoji key on by default, language-switch key removed |
 | `android_packages_apps_Settings` | Material You "About" logo, re-centred for QPR1 menu styling |
 | `android_vendor_bcr` | Call-recorder updates through 3.4 |
+
+Most of the Pixel 10 family's shared work lands in `laguna`, the common platform tree:
+crDroid-ifying the Lineage base, reserving partition space for GApps builds, folding in BCR
+and JamesDSP, and pulling overlays through as they move to vendor.
 
 ## Kernel
 

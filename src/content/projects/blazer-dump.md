@@ -16,5 +16,5 @@ have to know exactly what it does — which HALs are present, how partitions are
 what properties and SELinux labels the vendor image expects. Guessing costs days; reading
 the actual image costs an afternoon.
 
-This one is the groundwork under [crDroid for the Pixel 10 Pro](/projects/crdroid-blazer/),
+This one is the groundwork under [crDroid for the Pixel 10 family](/projects/crdroid-pixel-10/),
 and it's public so nobody else porting to `blazer` has to redo it.
