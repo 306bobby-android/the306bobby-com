@@ -31,7 +31,7 @@ const { Content } = await render(project);
       <div class="head-meta">
         <span class="badge" data-status={status}>{status}</span>
         <time class="meta" datetime={date.toISOString()}>
-          {date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+          {date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', timeZone: 'UTC' })}
         </time>
       </div>
 

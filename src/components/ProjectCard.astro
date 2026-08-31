@@ -17,7 +17,7 @@ const { title, summary, tags, status, date } = project.data;
   <p class="card-summary">{summary}</p>
   <div class="card-foot">
     <time class="meta" datetime={date.toISOString()}>
-      {date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+      {date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', timeZone: 'UTC' })}
     </time>
     {tags.length > 0 && (
       <ul class="tags">
