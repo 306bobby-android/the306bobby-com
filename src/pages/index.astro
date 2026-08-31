@@ -10,24 +10,55 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft))
 const featured = projects.filter((p) => p.data.featured);
 const shown = (featured.length > 0 ? featured : projects).slice(0, 4);
 const hasMore = projects.length > shown.length;
+
+const devices = [
+  { name: 'Pixel 10 Pro', codename: 'blazer', forum: 'https://xdaforums.com/t/rom-official-16-0-crdroid-12-x-for-pixel-10-pro-pro-xl-blazer-mustang.4785628/' },
+  { name: 'Pixel 5a', codename: 'barbet', forum: 'https://xdaforums.com/t/rom-official-13-14-15-crdroid-for-pixel-5a-barbet.4646786/' },
+  { name: 'Pixel 5', codename: 'redfin', forum: 'https://xdaforums.com/t/rom-official-13-14-15-crdroid-for-pixel-5-redfin.4664665/' },
+  { name: 'Pixel 4a 5G', codename: 'bramble', forum: 'https://xdaforums.com/t/rom-official-13-14-15-crdroid-for-pixel-4a5g-bramble.4664667/' },
+];
 ---
 
 <Base description={SITE.description}>
   <section class="intro">
-    <p class="eyebrow">Android platform &amp; systems</p>
-    <h1>Hey, I'm Bobby.</h1>
+    <p class="eyebrow">Android platform &amp; ROM maintenance</p>
+    <h1>Bobby Panarisi</h1>
     <p class="lede">
-      I work on Android platform code — device trees, SELinux policy, kernel bits, and the
-      tooling around them. This site collects the projects worth writing down.
+      I maintain <a href="https://crdroid.net" rel="noopener">crDroid</a> for four Google
+      Pixel devices — device trees, kernels, SELinux policy, and the build tooling that
+      turns all of it into a signed monthly OTA.
     </p>
     <p>
-      Most of it lives on <a href={SITE.github} rel="me noopener">GitHub</a>.
+      Everything I publish is on <a href={SITE.github} rel="me noopener">GitHub</a>. Builds
+      ship through crDroid's official channels; I also publish
+      <a href={SITE.gapps} rel="noopener">matching NikGapps packages</a>.
     </p>
+  </section>
+
+  <section class="devices">
+    <h2>Officially maintained</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Device</th><th>Codename</th><th>Thread</th></tr>
+        </thead>
+        <tbody>
+          {devices.map((d) => (
+            <tr>
+              <td>{d.name}</td>
+              <td><code>{d.codename}</code></td>
+              <td><a href={d.forum} rel="noopener">XDA</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="meta note">All four on crDroid 12.x / Android 16, built monthly.</p>
   </section>
 
   <section>
     <div class="section-head">
-      <h2>{featured.length > 0 ? 'Featured projects' : 'Recent projects'}</h2>
+      <h2>{featured.length > 0 ? 'Selected work' : 'Recent projects'}</h2>
       {hasMore && <a class="more" href="/projects/">All projects &rarr;</a>}
     </div>
 
@@ -42,12 +73,17 @@ const hasMore = projects.length > shown.length;
 </Base>
 
 <style>
-  .intro { margin-bottom: 56px; }
+  .intro { margin-bottom: 52px; }
   .lede {
     font-size: 1.05rem;
     color: var(--fg-muted);
     max-width: var(--measure);
   }
+
+  .devices { margin-bottom: 52px; }
+  .devices h2 { margin-bottom: 14px; }
+  .devices td:first-child { white-space: nowrap; }
+  .note { margin-top: 10px; }
 
   .section-head {
     display: flex;

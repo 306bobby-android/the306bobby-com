@@ -2,11 +2,11 @@
 title: the306bobby.com
 summary: This site — a static Astro build served from Cloudflare Workers' asset storage.
 date: 2026-08-31
-tags: ["astro", "cloudflare", "workers"]
+tags: ["astro", "cloudflare", "workers", "meta"]
 repo: https://github.com/306bobby-android/the306bobby-com
 link: https://the306bobby.com
 status: active
-featured: true
+featured: false
 ---
 
 The site you're reading. It exists so the projects below have somewhere to live that
